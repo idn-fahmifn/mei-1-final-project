@@ -18,4 +18,10 @@ class ResponController extends Controller
         $data = Laporan::findOrFail($param);
         return view('respon.detail', compact('data'));
     }
+
+    public function respon($param)
+    {
+        $data = Laporan::findOrFail($param);
+        return view('respon.create', compact('data'));
+    }
 }
