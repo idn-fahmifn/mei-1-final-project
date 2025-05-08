@@ -11,7 +11,8 @@
                 <div class="p-6 flex justify-between">
                     <div class="">
                         <h2 class="font-semibold text-xl dark:text-white mb-1">Laporan saya</h2>
-                        <span class="dark:text-gray-300"> Data laporan saya yang sudah diajukan. </span>
+                        <span class="dark:text-gray-300"> Data laporan saya yang sudah diajukan, </span> <br>
+                        <span class="dark:text-gray-300"> Klik pada Judul Laporan untuk melihat detail. </span>
                     </div>
                     <div class="">
                         <a href="" class="text-red-600 font-semibold hover:text-red-500">Ajukan</a>
@@ -28,7 +29,7 @@
                             <tbody>
                                 @foreach ($data as $item)
                                     <tr class="border border-collapse border-x-0 border-gray-300">
-                                        <td class="py-2 px-4 dark:text-gray-300 uppercase text-xs">{{$item->judul_laporan}}</td>
+                                        <td class="py-2 px-4 dark:text-gray-300 uppercase text-xs"> <a href="#">{{$item->judul_laporan}}</a></td>
                                         <td class="py-2 px-4 dark:text-gray-300 uppercase text-xs">{{$item->status}}</td>
                                         <td class="py-2 px-4 dark:text-gray-300 uppercase text-xs">{{$item->created_at}}</td>
                                     </tr>
