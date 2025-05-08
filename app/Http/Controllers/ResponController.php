@@ -17,7 +17,8 @@ class ResponController extends Controller
     public function detail($param)
     {
         $data = Laporan::findOrFail($param);
-        return view('respon.detail', compact('data'));
+        $respon = Respon::where('id_laporan', $param)->get()->all();
+        return view('respon.detail', compact('data', 'respon'));
     }
 
     public function respon($param)
