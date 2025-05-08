@@ -14,8 +14,16 @@
 
                 <div class="p-6">
                     {{-- form --}}
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="" method="post">
                         @csrf
+                        <div class="">
+                            <x-input-label for="detail_respon" :value="__('Status')" />
+                            <select name="status" id="status" class="block mt-1 w-full p-4 dark:border border-gray-300  dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+                                <option value="proses">Proses</option>
+                                <option value="selesai">Selesai</option>
+                                <option value="ditolak">Ditolak</option>
+                            </select>
+                        </div>
                         
                         <div class="mt-4">
                             <x-input-label for="detail_respon" :value="__('Detail Respon')" />
@@ -26,7 +34,7 @@
                         </div>
                         <div class="mt-4">
                             <x-primary-button>
-                                {{__('Buat Laporan')}}
+                                {{__('Respon Laporan')}}
                             </x-primary-button>
                         </div>
                     </form>
