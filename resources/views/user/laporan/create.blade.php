@@ -25,14 +25,21 @@
                         </div>
                         <div class="mt-4">
                             <x-input-label for="dokumentasi" :value="__('Dokumentasi')" />
-                            <x-text-input id="dokumentasi" class="block mt-1 w-full p-4 dark:border border-gray-300" type="file" name="dokumentasi"
-                                :value="old('dokumentasi')" required />
+                            <x-text-input id="dokumentasi" class="block mt-1 w-full p-4 dark:border border-gray-300"
+                                type="file" name="dokumentasi" :value="old('dokumentasi')" required />
                             <x-input-error :messages="$errors->get('dokumentasi')" class="mt-2" />
                         </div>
                         <div class="mt-4">
                             <x-input-label for="dokumentasi" :value="__('Detail Laporan')" />
-                            <textarea name="detail_laporan" id="detail_laporan" class="block mt-1 w-full p-4 dark:border border-gray-300  dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm" :value="old('judul_laporan')" required ></textarea>
+                            <textarea name="detail_laporan" id="detail_laporan"
+                                class="block mt-1 w-full p-4 dark:border border-gray-300  dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm"
+                                :value="old('judul_laporan')" required></textarea>
                             <x-input-error :messages="$errors->get('detail_laporan')" class="mt-2" />
+                        </div>
+                        <div class="mt-4">
+                            <x-primary-button>
+                                {{__('Buat Laporan')}}
+                            </x-primary-button>
                         </div>
                     </form>
                 </div>
