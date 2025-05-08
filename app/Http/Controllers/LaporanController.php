@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Laporan;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,14 +30,19 @@ class LaporanController extends Controller
         // input untuk nilai id_user
         $input['id_user'] = Auth::user()->id; //mengambil id user yang sedang login.
 
-        if($request->hasFile('dokumentasu'))
+        if($request->hasFile('dokumentasi'))
         {
             $img = $request->file('dokumentasi'); //mengambil file gambar yang diupload
             $path = 'public/images/laporan'; //menentukan path yang akan dijadikan penyimpanan
             $ext = $img->getClientOriginalExtension(); //mengambil format file
-            $nama = 'dokumentasi_laporan'.Carbon::now()->format('Ymdhis').'.'.$ext; //nama ketika gambar berhasil diupload
+            $nama = 'dokumentasi_laporan'.random_int(0000, 9999).Carbon::now()->format('Ymdhis').'.'.$ext; //nama ketika gambar berhasil diupload
             $img->storeAs($path, $nama); //menyimpan ke path dengan nama baru.
+
+            $input['dokumentasi'] = $nama; //nilai yang akan disimpan di database
         }
+
+        Laporan::create($input);
+        return redirect()->route('user.laporan.index')->with('success','Laporan berhasil diajukan');
 
 
     }
