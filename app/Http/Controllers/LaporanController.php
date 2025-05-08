@@ -12,7 +12,7 @@ class LaporanController extends Controller
 {
     public function index()
     {
-        $data = Laporan::all();
+        $data = Laporan::where('id_user', Auth::user()->id)->get()->all();
         return view('user.laporan.index', compact('data'));
     }
     public function create()
