@@ -14,7 +14,7 @@
 
                 <div class="p-6">
                     {{-- form --}}
-                    <form action="" method="post">
+                    <form action="{{route('respon.store', $data->id)}}" method="post">
                         @csrf
                         <div class="">
                             <x-input-label for="detail_respon" :value="__('Status')" />

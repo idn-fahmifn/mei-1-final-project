@@ -27,8 +27,7 @@ Route::prefix('admin')->middleware(['auth', 'verified','admin'])->group(function
     Route::get('semua-laporan', [ResponController::class, 'index'])->name('admin.laporan.index');
     Route::get('laporan/{param}', [ResponController::class, 'detail'])->name('admin.laporan.detail');
     Route::get('respon/{param}', [ResponController::class, 'respon'])->name('admin.respon');
-
-
+    Route::post('respon/{param}', [ResponController::class, 'store'])->name('respon.store');
 
 });
 
