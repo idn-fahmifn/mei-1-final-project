@@ -22,7 +22,6 @@
                             @if ($data->status != 'selesai')
                                 <a href="{{route('user.laporan.edit', $data->id)}}" class="text-red-600 text-sm font-semibold dark:text-gray-300">Respon</a>
                             @endif
-
                         </form>
 
                     </div>
