@@ -29,17 +29,18 @@ class ResponController extends Controller
     public function store(Request $request, $param)
     {
         $request->validate([
-            'detail_respon' => 'required'
+            'detail_respon' => 'required' //validasi untuk form detail respon
         ]);
 
         Respon::create([
-            'id_laporan' => $param,
-            'detail_respon' => $request->detail_respon
+            'id_laporan' => $param, //mengambil nilai untuk column id laporan dari parameter
+            'detail_respon' => $request->detail_respon // mengambil nilai dari request detail respon (form)
         ]);
 
-        $status = Laporan::findOrFail($param);
-        $status->status = $request->status;
-        $status->save();
+        // jika ada sebuah perubahan untuk status
+        $status = Laporan::findOrFail($param); //mencari data yang akan diganti berdasarkan parameter yang dipilih
+        $status->status = $request->status; //menyimpan perubahan yang diambil dari form input.
+        $status->save(); //perintah untuk menyimpan
 
         return redirect()->route('admin.laporan.detail', $param);
 
