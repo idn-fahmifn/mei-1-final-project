@@ -87,7 +87,17 @@ class LaporanController extends Controller
         }
 
         $data->update($input);
-        
+
         return redirect()->route('user.laporan.detail', $param)->with('success','Laporan berhasil diubah');
     }
+
+    public function delete($param)
+    {
+        $data = Laporan::findOrFail($param);
+        $data->delete();
+        Storage::delete('public/images/laporan/'.$data->dokumentasi);
+
+        return redirect()->route('user.laporan.index')->with('success', 'Data berhasil dihapus');
+    }
+
 }

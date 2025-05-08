@@ -14,9 +14,9 @@
                     </div>
                     <div class="">
 
-                        <form action="#" method="post">
+                        <form action="{{route('user.laporan.delete', $data->id)}}" method="post">
                             @csrf
-                            <button class="text-sm bg-transparent text-red-500 fonr-semibold me-2">Hapus</button>
+                            <button class="text-sm bg-transparent text-red-500 fonr-semibold me-2" onclick="return confirm('Hapus laporan?')">Hapus</button>
 
                             @if ($data->status == 'pending')
                                 <a href="{{route('user.laporan.edit', $data->id)}}" class="text-red-600 text-sm font-semibold dark:text-gray-300">Edit</a>
