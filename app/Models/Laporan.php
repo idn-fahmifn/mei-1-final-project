@@ -10,4 +10,6 @@ class Laporan extends Model
     protected $fillable = [
         'id_user', 'judul_laporan', 'dokumentasi', 'detail_laporan', 'status'
     ];
+
+    protected $casts = ['created_at' => 'datetime'];
 }

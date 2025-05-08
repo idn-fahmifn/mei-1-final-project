@@ -29,9 +29,13 @@
                             <tbody>
                                 @foreach ($data as $item)
                                     <tr class="border border-collapse border-x-0 border-gray-300">
-                                        <td class="py-2 px-4 dark:text-gray-300 uppercase text-xs"> <a href="{{route('user.laporan.detail', $item->id)}}">{{$item->judul_laporan}}</a></td>
+                                        <td class="py-2 px-4 dark:text-gray-300 uppercase text-xs">
+                                            <a
+                                                href="{{route('user.laporan.detail', $item->id)}}">{{$item->judul_laporan}}</a>
+                                        </td>
                                         <td class="py-2 px-4 dark:text-gray-300 uppercase text-xs">{{$item->status}}</td>
-                                        <td class="py-2 px-4 dark:text-gray-300 uppercase text-xs">{{$item->created_at}}</td>
+                                        <td class="py-2 px-4 dark:text-gray-300 uppercase text-xs">{{$item->created_at}}
+                                        </td>
                                     </tr>
                                 @endforeach
 

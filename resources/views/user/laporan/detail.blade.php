@@ -13,7 +13,13 @@
                         <h2 class="font-semibold text-xl dark:text-white mb-1">Detail Laporan saya</h2>
                     </div>
                     <div class="">
-                        <a href="" class="text-red-600 font-semibold hover:text-red-500">Ajukan</a>
+
+                        <form action="#" method="post">
+                            @csrf
+                            <button class="text-sm bg-transparent text-red-500 fonr-semibold me-2">Hapus</button>
+                            <a href="" class="text-red-600 text-sm font-semibold dark:text-gray-300">Edit</a>
+                        </form>
+
                     </div>
                 </div>
                 <div class="p-6">
@@ -22,20 +28,27 @@
                             <tbody class="border border-collapse border-x-0 border-gray-300">
                                 <tr>
                                     <td class="py-2 px-4 dark:text-gray-300 uppercase text-sm">Judul Laporan</td>
-                                    <td class="py-2 px-4 dark:text-gray-300 uppercase text-sm">{{$data->judul_laporan}}</td>
+                                    <td class="py-2 px-4 dark:text-gray-300 text-sm">{{$data->judul_laporan}}</td>
                                 </tr>
                                 <tr>
                                     <td class="py-2 px-4 dark:text-gray-300 uppercase text-sm">Status</td>
-                                    <td class="py-2 px-4 dark:text-gray-300 uppercase text-sm">{{$data->status}}</td>
+                                    <td class="py-2 px-4 dark:text-gray-300 text-sm">{{$data->status}}</td>
                                 </tr>
                                 <tr>
                                     <td class="py-2 px-4 dark:text-gray-300 uppercase text-sm">Tanggal Laporan</td>
-                                    <td class="py-2 px-4 dark:text-gray-300 uppercase text-sm">{{$data->created_at}}</td>
+                                    {{-- 3jam yang lalu --}}
+                                    <td class="py-2 px-4 dark:text-gray-300 text-sm">
+                                        {{$data->created_at->diffForHumans()}}</td>
+
+                                    {{-- format tanggal --}}
+                                    {{-- <td class="py-2 px-4 dark:text-gray-300 text-sm">
+                                        {{$data->created_at->format('d/m/Y')}}</td> --}}
                                 </tr>
                             </tbody>
                         </table>
                         <div class="flex justify-center mt-4">
-                            <img src="{{asset('storage/images/laporan/'.$data->dokumentasi)}}" width="300" alt="Dokumentasi Laporan">
+                            <img src="{{asset('storage/images/laporan/' . $data->dokumentasi)}}" width="300"
+                                alt="Dokumentasi Laporan">
                         </div>
                     </div>
                 </div>
