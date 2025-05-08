@@ -17,10 +17,12 @@
                         <form action="{{route('user.laporan.delete', $data->id)}}" method="post">
                             @csrf
                             @method('delete')
-                            <button class="text-sm bg-transparent text-red-500 fonr-semibold me-2" onclick="return confirm('Hapus laporan?')">Hapus</button>
+                            <button class="text-sm bg-transparent text-red-500 fonr-semibold me-2"
+                                onclick="return confirm('Hapus laporan?')">Hapus</button>
 
                             @if ($data->status != 'selesai')
-                                <a href="{{route('admin.respon', $data->id)}}" class="text-red-600 text-sm font-semibold dark:text-gray-300">Respon</a>
+                                <a href="{{route('admin.respon', $data->id)}}"
+                                    class="text-red-600 text-sm font-semibold dark:text-gray-300">Respon</a>
                             @endif
                         </form>
 
@@ -44,10 +46,6 @@
                                     <td class="py-2 px-4 dark:text-gray-300 text-sm">
                                         {{$data->created_at->diffForHumans()}}
                                     </td>
-
-                                    {{-- format tanggal --}}
-                                    {{-- <td class="py-2 px-4 dark:text-gray-300 text-sm">
-                                        {{$data->created_at->format('d/m/Y')}}</td> --}}
                                 </tr>
                             </tbody>
                         </table>
@@ -58,6 +56,24 @@
                     </div>
                 </div>
             </div>
+
+            <div class="mt-4">
+
+                @foreach ($respon as $item)
+                    <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg mt-1">
+                        <div class="p-6">
+                            <h4 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Respon</h4>
+                            <p class="dark:text-gray-300">
+                                {{$item->detail_respon}}
+                            </p>
+                        </div>
+                    </div>
+                @endforeach
+
+
+
+            </div>
+
         </div>
     </div>
 </x-app-layout>
