@@ -17,7 +17,11 @@
                         <form action="#" method="post">
                             @csrf
                             <button class="text-sm bg-transparent text-red-500 fonr-semibold me-2">Hapus</button>
-                            <a href="" class="text-red-600 text-sm font-semibold dark:text-gray-300">Edit</a>
+
+                            @if ($data->status == 'pending')
+                                <a href="{{route('user.laporan.edit', $data->id)}}" class="text-red-600 text-sm font-semibold dark:text-gray-300">Edit</a>
+                            @endif
+
                         </form>
 
                     </div>
@@ -38,7 +42,8 @@
                                     <td class="py-2 px-4 dark:text-gray-300 uppercase text-sm">Tanggal Laporan</td>
                                     {{-- 3jam yang lalu --}}
                                     <td class="py-2 px-4 dark:text-gray-300 text-sm">
-                                        {{$data->created_at->diffForHumans()}}</td>
+                                        {{$data->created_at->diffForHumans()}}
+                                    </td>
 
                                     {{-- format tanggal --}}
                                     {{-- <td class="py-2 px-4 dark:text-gray-300 text-sm">

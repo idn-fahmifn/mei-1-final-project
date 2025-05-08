@@ -41,6 +41,7 @@ Route::prefix('user')->middleware(['auth', 'verified'])->group(function(){
     Route::get('laporan/create', [LaporanController::class, 'create'])->name('user.laporan.create');
     Route::post('laporan', [LaporanController::class, 'store'])->name('user.laporan.store');
     Route::get('laporan/{param}', [LaporanController::class, 'detail'])->name('user.laporan.detail');
+    Route::get('laporan/{param}/edit', [LaporanController::class, 'edit'])->name('user.laporan.edit');
 
 
 

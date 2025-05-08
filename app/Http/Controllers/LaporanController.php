@@ -51,4 +51,10 @@ class LaporanController extends Controller
         $data = Laporan::findOrFail($param);
         return view('user.laporan.detail', compact('data'));
     }
+
+    public function edit($param)
+    {
+        $data = Laporan::findOrFail($param);
+        return view('user.laporan.edit', compact('data'));
+    }
 }
