@@ -15,7 +15,7 @@
                         <span class="dark:text-gray-300"> Klik pada Judul Laporan untuk melihat detail. </span>
                     </div>
                     <div class="">
-                        <a href="" class="text-red-600 font-semibold hover:text-red-500">Ajukan</a>
+                        <a href="{{route('user.laporan.create')}}" class="text-red-600 font-semibold hover:text-red-500">Ajukan</a>
                     </div>
                 </div>
                 <div class="p-6">

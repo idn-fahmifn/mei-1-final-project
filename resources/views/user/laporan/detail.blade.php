@@ -16,6 +16,7 @@
 
                         <form action="{{route('user.laporan.delete', $data->id)}}" method="post">
                             @csrf
+                            @method('delete')
                             <button class="text-sm bg-transparent text-red-500 fonr-semibold me-2" onclick="return confirm('Hapus laporan?')">Hapus</button>
 
                             @if ($data->status == 'pending')
