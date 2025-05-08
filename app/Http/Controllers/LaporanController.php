@@ -85,6 +85,9 @@ class LaporanController extends Controller
             // menghapus file yang diedit atau dihapus
             Storage::delete('public/images/laporan/'.$data->dokumentasi);
         }
+
+        $data->update($input);
+        
         return redirect()->route('user.laporan.detail', $param)->with('success','Laporan berhasil diubah');
     }
 }

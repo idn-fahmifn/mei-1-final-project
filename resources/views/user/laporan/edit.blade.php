@@ -15,7 +15,7 @@
 
                 <div class="p-6">
                     {{-- form --}}
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="{{route('user.laporan.update', $data->id)}}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('put')
                         <div>
