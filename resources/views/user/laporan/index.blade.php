@@ -26,26 +26,14 @@
                                 <th class="py-2 px-4 dark:text-gray-300 uppercase text-sm">Tanggal Laporan</th>
                             </thead>
                             <tbody>
-                                <tr class="border border-collapse border-x-0 border-gray-300">
-                                    <td class="py-2 px-4 dark:text-gray-300 uppercase text-xs">TV Pecah</td>
-                                    <td class="py-2 px-4 dark:text-gray-300 uppercase text-xs">pending</td>
-                                    <td class="py-2 px-4 dark:text-gray-300 uppercase text-xs">8/5/2025</td>
-                                </tr>
-                                <tr class="border border-collapse border-x-0 border-gray-300">
-                                    <td class="py-2 px-4 dark:text-gray-300 uppercase text-xs">TV Pecah</td>
-                                    <td class="py-2 px-4 dark:text-gray-300 uppercase text-xs">pending</td>
-                                    <td class="py-2 px-4 dark:text-gray-300 uppercase text-xs">8/5/2025</td>
-                                </tr>
-                                <tr class="border border-collapse border-x-0 border-gray-300">
-                                    <td class="py-2 px-4 dark:text-gray-300 uppercase text-xs">TV Pecah</td>
-                                    <td class="py-2 px-4 dark:text-gray-300 uppercase text-xs">pending</td>
-                                    <td class="py-2 px-4 dark:text-gray-300 uppercase text-xs">8/5/2025</td>
-                                </tr>
-                                <tr class="border border-collapse border-x-0 border-gray-300">
-                                    <td class="py-2 px-4 dark:text-gray-300 uppercase text-xs">TV Pecah</td>
-                                    <td class="py-2 px-4 dark:text-gray-300 uppercase text-xs">pending</td>
-                                    <td class="py-2 px-4 dark:text-gray-300 uppercase text-xs">8/5/2025</td>
-                                </tr>
+                                @foreach ($data as $item)
+                                    <tr class="border border-collapse border-x-0 border-gray-300">
+                                        <td class="py-2 px-4 dark:text-gray-300 uppercase text-xs">{{$item->judul_laporan}}</td>
+                                        <td class="py-2 px-4 dark:text-gray-300 uppercase text-xs">{{$item->status}}</td>
+                                        <td class="py-2 px-4 dark:text-gray-300 uppercase text-xs">{{$item->created_at}}</td>
+                                    </tr>
+                                @endforeach
+
                             </tbody>
                         </table>
                     </div>

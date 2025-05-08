@@ -11,7 +11,8 @@ class LaporanController extends Controller
 {
     public function index()
     {
-        return view('user.laporan.index');
+        $data = Laporan::all();
+        return view('user.laporan.index', compact('data'));
     }
     public function create()
     {
