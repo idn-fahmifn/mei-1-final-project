@@ -15,7 +15,7 @@
 
                 <div class="p-6">
                     {{-- form --}}
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="{{route('user.laporan.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div>
                             <x-input-label for="judul_laporan" :value="__('Judul Laporan')" />
